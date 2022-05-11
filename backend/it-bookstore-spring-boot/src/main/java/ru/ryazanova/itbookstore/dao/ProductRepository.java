@@ -16,4 +16,9 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
     http://localhost:8080/api/products/search/findByCategoryId?id=2
     */
     Page<Product> findByCategoryId(@RequestParam("id") Integer id, Pageable pageable);
+
+//    for search component
+//    Spring exposes automatically the endpoint
+//    http://localhost:8080/api/products/search/findByNameContaining?name=Python
+    Page<Product> findByNameContaining(@RequestParam("name") String name, Pageable pageable);
 }
