@@ -8,6 +8,5 @@ import ru.ryazanova.itbookstore.entity.ProductCategory;
 
 @Repository
 @RepositoryRestResource(collectionResourceRel = "productCategory", path = "product-category")
-@CrossOrigin("http://localhost:4200/")
 public interface ProductCategoryRepository extends JpaRepository<ProductCategory, Integer> {
 }
