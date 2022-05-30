@@ -7,10 +7,7 @@ import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
 import org.springframework.http.HttpMethod;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import ru.ryazanova.itbookstore.entity.Country;
-import ru.ryazanova.itbookstore.entity.Product;
-import ru.ryazanova.itbookstore.entity.ProductCategory;
-import ru.ryazanova.itbookstore.entity.State;
+import ru.ryazanova.itbookstore.entity.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.metamodel.EntityType;
@@ -46,6 +43,9 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
 
         //disable HttpMethods for State.class - delete, put, post
         disableHttpMethods(State.class, config, unsupportedActions);
+
+        //disable HttpMethods for Order.class - delete, put, post
+        disableHttpMethods(Order.class, config, unsupportedActions);
 
         //call internal helper method
         exposeIds(config);
